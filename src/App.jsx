@@ -70,7 +70,6 @@ const App = () => {
       } catch (err) {
         alert('Failed to update note: ' + err.message);
       }
-      //dasd
     } else {
       // Add new note
       try {
