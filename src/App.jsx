@@ -57,7 +57,7 @@ const App = () => {
     if (editIndex !== null) {
       // Edit existing note
       try {
-        const noteId = notes[editndex]._id;  // Get the ID of the note being edited
+        const noteId = notes[editIndex]._id;  // Get the ID of the note being edited
         await axios.put(`https://notes-y675.onrender.com/api/notes/${noteId}`, newNote);
   
         // Update the local state with the edited note
