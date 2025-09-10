@@ -10,7 +10,7 @@ const App = () => {
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/notes');
+        const res = await axios.get('https://notes-y675.onrender.com/api/notes');
         setNotes(res.data);
       } catch (err) {
         console.error("Failed to load notes", err);
@@ -58,7 +58,7 @@ const App = () => {
       // Edit existing note
       try {
         const noteId = notes[editndex]._id;  // Get the ID of the note being edited
-        await axios.put(`http://localhost:5000/api/notes/${noteId}`, newNote);
+        await axios.put(`https://notes-y675.onrender.com/api/notes/${noteId}`, newNote);
   
         // Update the local state with the edited note
         setNotes(prevNotes => {
@@ -73,7 +73,7 @@ const App = () => {
     } else {
       // Add new note
       try {
-        const res = await axios.post('http://localhost:5000/api/notes', newNote);
+        const res = await axios.post('https://notes-y675.onrender.com/api/notes', newNote);
         setNotes(prev => [...prev, res.data]); // Add the new note to the list
       } catch (err) {
         alert('Failed to save note: ' + err.message);
@@ -92,7 +92,7 @@ const App = () => {
     const noteId = notes[indexToDelete]._id;
 
     try {
-      await axios.delete(`http://localhost:5000/api/notes/${noteId}`);
+      await axios.delete(`https://notes-y675.onrender.com/api/notes/${noteId}`);
       setNotes(prevNotes => prevNotes.filter((_, index) => index !== indexToDelete));
     } catch (err) {
       alert('Failed to delete note: ' + err.message);

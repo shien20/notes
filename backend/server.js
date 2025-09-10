@@ -13,7 +13,7 @@ mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => console.log('MongoDB connected'))
-  .catch(err => console.error("MongoDB connection error:", err));
+  .catch(err => console.error("MongoDB connection error:",err));
 
 // Create a note
 app.post('/api/notes', async (req, res) => {
