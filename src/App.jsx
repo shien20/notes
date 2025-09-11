@@ -152,6 +152,7 @@ const App = () => {
           <div key={note._id} className='note'> 
             <h3>{note.title}</h3>
             <p>{note.content}</p>
+            <div style={{flex: 1}}></div>
             <div className='btn'>
               <button onClick={() => editNote(index)}>Edit</button>
               <button onClick={() => deleteNote(index)}>Delete</button>
